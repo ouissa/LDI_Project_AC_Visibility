@@ -1,15 +1,22 @@
 import React, { Component } from 'react';
+import Header from './Header';
 
 
+const sections = [
+  { title: 'About', url: '/About' },
+  { title: 'Volunteer', url: '/Volunteer' },
+  { title: 'login', url: '#' },
+  { title: 'sign up', url: '#' },
+  
+];
 
 class About extends Component {
   render() {
     return (
-    <div className="App">
-      <h1>About</h1>
-      <p>le3ez hadchi khadam !!</p>
-      
-    </div>
+      <React.Fragment>
+        <Header title="Le3ez hadchi khadam!" sections={sections} />
+        </React.Fragment>
+  
     );
   }
 }

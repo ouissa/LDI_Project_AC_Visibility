@@ -22,21 +22,17 @@ const useStyles = makeStyles(theme => ({
 
 const sections = [
   { title: 'About', url: '/About' },
-  { title: 'Design', url: '#' },
-  { title: 'Culture', url: '#' },
-  { title: 'Business', url: '#' },
-  { title: 'Politics', url: '#' },
-  { title: 'Opinion', url: '#' },
-  { title: 'Science', url: '#' },
-  { title: 'Health', url: '#' },
-  { title: 'Style', url: '#' },
-  { title: 'Travel', url: '#' },
+  { title: 'Volunteer', url: '/Volunteer' },
+  { title: 'login', url: '/Login' },
+  { title: 'sign up', url: '/SignUp' },
+  
 ];
 
+
 const mainFeaturedPost = {
-  title: 'Title of a longer featured blog post',
+  title: 'Welcome to the Azrou Center',
   description:
-    "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
+    "",
   image: 'https://source.unsplash.com/random',
   imgText: 'main image description',
   linkText: 'Continue reading…',
@@ -95,7 +91,7 @@ export default function Blog() {
     <React.Fragment>
       <CssBaseline />
       <Container maxWidth="lg">
-        <Header title="Blog" sections={sections} />
+        <Header title="Azrou Ceter" sections={sections} />
         <main>
           <MainFeaturedPost post={mainFeaturedPost} />
           <Grid container spacing={4}>

@@ -16,7 +16,7 @@ const auth = require("../middleware/auth");
 router.post(
     "/signup",
     [
-        check("username", "Please Enter a Valid Username")
+        check("fname", "Please Enter a Valid Username")
         .not()
         .isEmpty(),
         check("email", "Please enter a valid email").isEmail(),
@@ -31,11 +31,15 @@ router.post(
                 errors: errors.array()
             });
         }
-
+        //fix this to be good with the new fields in the form
         const {
-            username,
+            fname,
+            lname,
+            stuId,
+            phoneNum,
+            cinNum,
             email,
-            password
+            password,
         } = req.body;
         try {
             let user = await User.findOne({
@@ -48,9 +52,13 @@ router.post(
             }
 
             user = new User({
-                username,
-                email,
-                password
+              fname,
+              lname,
+              stuId,
+              phoneNum,
+              cinNum,
+              email,
+              password
             });
 
             const salt = await bcrypt.genSalt(10);
@@ -130,7 +138,9 @@ router.post(
         },
         (err, token) => {
           if (err) throw err;
+          console.log("loged in");
           res.status(200).json({
+            
             token
           });
         }
@@ -154,6 +164,11 @@ router.get("/me", auth, async (req, res) => {
   } catch (e) {
     res.send({ message: "Error in Fetching user" });
   }
+});
+
+router.get('/logout', function(req, res){
+  req.logout();
+  res.redirect('/');
 });
 
 

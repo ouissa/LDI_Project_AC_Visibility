@@ -44,10 +44,10 @@ export default function Header(props) {
           {title}
         </Typography>
         <IconButton>
-          <SearchIcon />
+      
         </IconButton>
         <Button variant="outlined" size="small">
-          Sign up
+          Register
         </Button>
       </Toolbar>
       <Toolbar component="nav" variant="dense" className={classes.toolbarSecondary}>
